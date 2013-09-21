@@ -1,0 +1,31 @@
+%table#browse_mojos{:border => "0"}
+  - mojos.each do |mojo_info|
+    %tr
+      %td="Goal: #{mojo_info.goal}"
+    %tr
+      %td="Description: #{mojo_info.description}"
+    %tr
+      %td="Parameters:"
+    %tr
+      %td
+        %table{:border => "1"}
+          %tr
+            %td="Name"
+            %td="Type"
+            %td="Required"
+            %td="Editable"
+            %td="Description"
+
+          - mojo_info.parameters.each do |param|
+            %tr
+              %td=param[:name]
+              %td=param[:type]
+              %td=param[:required]
+              %td=param[:editable]
+              %td=param[:description]
+    %tr
+      %td="Configuration:"
+    %tr
+      %td
+        %pre=h mojo_info.configuration
+

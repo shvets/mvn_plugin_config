@@ -1,0 +1,24 @@
+# -*- encoding: utf-8 -*-
+
+require File.expand_path(File.dirname(__FILE__) + '/lib/mvn_plugin_config/version')
+
+Gem::Specification.new do |spec|
+  spec.name          = "mvn_plugin_config"
+  spec.summary       = %q{Opens list of maven plugins in browser's window.}
+  spec.description   = %q{Opens list of maven plugins in browser's window with the ability to see configuration for each of plugins.}
+  spec.email         = "alexander.shvets@gmail.com"
+  spec.authors       = ["Alexander Shvets"]
+  spec.homepage      = "http://github.com/shvets/mvn_plugin_config"
+
+  spec.files         = `git ls-files`.split($\)
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.bindir        = "bin"
+  spec.executables   = ['mvn-plugin-config']
+  spec.require_paths = ["lib"]
+  spec.version       = MvnPluginConfig::VERSION
+  spec.license       = "MIT"
+
+  <%= project_dependencies %>
+end
+
+

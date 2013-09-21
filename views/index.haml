@@ -1,0 +1,5 @@
+%table#browse_plugins{:border => "0"}
+  - plugins.each do |plugin_info|
+    %tr
+      %td
+        %a{ :href => "/#{plugin_info.full_name}" }=plugin_info.full_name
